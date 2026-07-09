@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="top-row">
+        <a href="#home" class="logo">amazon</a>
+        <button class="location-pill" id="locationButton">
+          <span>Deliver to</span>
+          <strong id="countryLabel">United States</strong>
+        </button>
+
+        <div class="search-wrap">
+          <select id="searchCategory">
+            <option>All</option>
+            <option>Electronics</option>
+            <option>Home</option>
+            <option>Fashion</option>
+          </select>
+          <input type="text" placeholder="Search Amazon" />
+          <button class="search-btn">🔍</button>
+        </div>
+
+        <div class="top-actions">
+          <button class="pill-btn" id="languageButton">EN</button>
+          <button class="pill-btn" id="countryButton">🇺🇸 US</button>
+          <a href="#login" class="nav-link">Hello, sign in</a>
+          <a href="#checkout" class="nav-link">Returns & Orders</a>
+          <button class="cart-btn" id="cartToggle">🛒 Cart <span id="cartCount">0</span></button>
+        </div>
+      </div>
+
+      <nav class="secondary-nav">
+        <a href="#home">Home</a>
+        <a href="#product">Product</a>
+        <a href="#login">Sign in</a>
+        <a href="#checkout">Checkout</a>
+        <button class="settings-btn" id="settingsToggle">⚙️ Settings</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="page-section">
+        <section class="hero">
+          <div class="hero-content">
+            <p class="eyebrow">Prime Day Deals</p>
+            <h1>Refresh your space for less</h1>
+            <p>Discover home essentials, smart picks, and seasonal favorites delivered fast.</p>
+            <a class="primary-btn" href="#product">Shop now</a>
+          </div>
+          <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Modern living room" />
+          </div>
+        </section>
+
+        <section class="status-bar">
+          <div class="status-pill"><span>🌍</span><strong id="activeRegion">United States</strong></div>
+          <div class="status-pill"><span>🗣️</span><strong id="activeLanguage">English</strong></div>
+          <div class="status-pill"><span>💖</span><strong id="wishlistCount">0 saved</strong></div>
+        </section>
+
+        <section class="products-section">
+          <div class="section-header">
+            <h2>Popular picks</h2>
+            <a href="#product">See more</a>
+          </div>
+          <div class="products-grid">
+            <article class="product-card">
+              <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=700&q=80" alt="Smart lamp" />
+              <h3>Smart LED lamp</h3>
+              <p>$39.99</p>
+              <div class="card-actions">
+                <button class="add-cart" data-name="Smart LED lamp" data-price="39.99">Add to Cart</button>
+                <button class="wishlist-btn" data-name="Smart LED lamp">♡</button>
+              </div>
+              <a class="secondary-link" href="#product">View details</a>
+            </article>
+
+            <article class="product-card">
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80" alt="Wireless headphones" />
+              <h3>Wireless headphones</h3>
+              <p>$89.00</p>
+              <div class="card-actions">
+                <button class="add-cart" data-name="Wireless headphones" data-price="89.00">Add to Cart</button>
+                <button class="wishlist-btn" data-name="Wireless headphones">♡</button>
+              </div>
+              <a class="secondary-link" href="#product">View details</a>
+            </article>
+
+            <article class="product-card">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="Fitness watch" />
+              <h3>Fitness watch</h3>
+              <p>$129.99</p>
+              <div class="card-actions">
+                <button class="add-cart" data-name="Fitness watch" data-price="129.99">Add to Cart</button>
+                <button class="wishlist-btn" data-name="Fitness watch">♡</button>
+              </div>
+              <a class="secondary-link" href="#product">View details</a>
+            </article>
+
+            <article class="product-card">
+              <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=700&q=80" alt="Coffee machine" />
+              <h3>Espresso machine</h3>
+              <p>$149.00</p>
+              <div class="card-actions">
+                <button class="add-cart" data-name="Espresso machine" data-price="149.00">Add to Cart</button>
+                <button class="wishlist-btn" data-name="Espresso machine">♡</button>
+              </div>
+              <a class="secondary-link" href="#product">View details</a>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="product" class="page-section">
+        <section class="detail-card">
+          <div class="detail-grid">
+            <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=1000&q=80" alt="Smart LED lamp" />
+            <div>
+              <p class="eyebrow">Amazon Choice</p>
+              <h1>Smart LED lamp with voice control</h1>
+              <p>Brighten your home with ambient lighting, app control, and a compact modern design.</p>
+              <div class="detail-price">$39.99</div>
+              <div class="card-actions">
+                <button class="add-cart" data-name="Smart LED lamp" data-price="39.99">Add to Cart</button>
+                <button class="wishlist-btn" data-name="Smart LED lamp">♡</button>
+              </div>
+              <p><strong>Features:</strong> dimmable, color changing, energy efficient, 2-year warranty.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="login" class="page-section">
+        <section class="auth-card">
+          <h1>Sign in</h1>
+          <form class="auth-form">
+            <input type="email" placeholder="Email or mobile phone number" />
+            <input type="password" placeholder="Password" />
+            <button class="primary-btn" type="submit">Continue</button>
+          </form>
+          <p>New to Amazon? <a href="#checkout">Create your account</a></p>
+        </section>
+      </section>
+
+      <section id="checkout" class="page-section">
+        <section class="checkout-card">
+          <div class="checkout-grid">
+            <div>
+              <h1>Checkout</h1>
+              <form class="checkout-form">
+                <input type="text" placeholder="Full name" />
+                <input type="text" placeholder="Address" />
+                <input type="text" placeholder="City" />
+                <input type="text" placeholder="Postal code" />
+                <select><option>Payment Method</option><option>Credit Card</option><option>PayPal</option></select>
+                <textarea rows="4" placeholder="Delivery notes"></textarea>
+                <button class="primary-btn" type="submit">Place your order</button>
+              </form>
+            </div>
+            <div>
+              <h2>Order Summary</h2>
+              <div class="summary-list">
+                <div class="summary-item"><span>Smart LED lamp</span><span>$39.99</span></div>
+                <div class="summary-item"><span>Shipping</span><span>$5.99</span></div>
+                <div class="summary-item"><strong>Total</strong><strong>$45.98</strong></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <aside class="drawer" id="cartDrawer">
+      <div class="drawer-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="drawer-footer">
+        <p id="cartTotal">Subtotal: $0.00</p>
+        <a class="primary-btn full" href="#checkout">Proceed to Checkout</a>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="settings-panel" id="settingsPanel">
+      <div class="settings-header">
+        <h3>Preferences</h3>
+        <button id="closeSettings">✕</button>
+      </div>
+      <label>
+        Country
+        <select id="settingsCountry">
+          <option value="United States">United States</option>
+          <option value="Canada">Canada</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="India">India</option>
+        </select>
+      </label>
+      <label>
+        Language
+        <select id="settingsLanguage">
+          <option value="English">English</option>
+          <option value="Español">Español</option>
+          <option value="Français">Français</option>
+          <option value="Deutsch">Deutsch</option>
+        </select>
+      </label>
+      <label class="toggle-row">
+        <span>Dark mode</span>
+        <input type="checkbox" id="darkModeToggle" />
+      </label>
+      <button class="primary-btn full" id="saveSettings">Save</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
