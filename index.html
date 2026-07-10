@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,59 +12,93 @@
   <body>
     <header class="topbar">
       <div class="top-row">
-        <a href="#home" class="logo">amazon</a>
-        <button class="location-pill" id="locationButton">
-          <span>Deliver to</span>
-          <strong id="countryLabel">United States</strong>
-        </button>
+        <div class="brand-group">
+          <a href="#home" class="logo-badge" aria-label="Amazon home">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon logo" />
+          </a>
+          <button class="location-pill" id="locationButton">
+            <span class="location-icon">📍</span>
+            <span class="location-copy">
+              <span>Deliver to</span>
+              <strong id="country!Label">United States</strong>
+            </span>
+          </button>
+        </div>
 
-        <div class="search-wrap">
-          <select id="searchCategory">
+        <div class="search-wrap" role="search">
+          <select id="searchCategory" aria-label="Search category">
             <option>All</option>
             <option>Electronics</option>
             <option>Home</option>
             <option>Fashion</option>
           </select>
-          <input type="text" placeholder="Search Amazon" />
-          <button class="search-btn">🔍</button>
+          <input type="text" placeholder="Search Amazon" aria-label="Search Amazon" />
+          <button class="search-btn" aria-label="Search">🔍</button>
         </div>
 
         <div class="top-actions">
-          <button class="pill-btn" id="languageButton">EN</button>
-          <button class="pill-btn" id="countryButton">🇺🇸 US</button>
+          <button class="lang-btn" id="languageButton" aria-label="Select language">
+            <span class="lang-flag" aria-hidden="true">🇺🇸</span>
+            <span class="lang-label">EN</span>
+            <span class="arrow-down" aria-hidden="true">▾</span>
+          </button>
           <a href="#login" class="nav-link">Hello, sign in</a>
           <a href="#checkout" class="nav-link">Returns & Orders</a>
-          <button class="cart-btn" id="cartToggle">🛒 Cart <span id="cartCount">0</span></button>
+          <button class="cart-btn" id="cartToggle" aria-label="Shopping cart">
+            <span class="cart-icon">🛒</span>
+            <span id="cartCount">0</span>
+          </button>
         </div>
       </div>
 
-      <nav class="secondary-nav">
-        <a href="#home">Home</a>
-        <a href="#product">Product</a>
-        <a href="#login">Sign in</a>
-        <a href="#checkout">Checkout</a>
-        <button class="settings-btn" id="settingsToggle">⚙️ Settings</button>
+      <nav class="secondary-nav" aria-label="Secondary navigation">
+        <button class="secondary-menu-btn" id="settingsToggle">
+          <span class="menu-icon">☰</span>
+          <span>All</span>
+        </button>
+        <a href="#home">Today's Deals</a>
+        <a href="#product">Prime Video</a>
+        <a href="#login">Gift Cards</a>
+        <a href="#checkout">Sell</a>
+        <a href="#home" class="secondary-nav-link icon-link"><span class="nav-icon">🎁</span><span>Registry</span></a>
+        <a href="#home" class="secondary-nav-link icon-link"><span class="nav-icon">💬</span><span>Customer Service</span></a>
       </nav>
     </header>
 
+    <div class="top-notice">
+      <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="#home">Click here to go to amazon.in</a></p>
+    </div>
+
     <main>
       <section id="home" class="page-section">
-        <section class="hero">
-          <div class="hero-content">
-            <p class="eyebrow">Prime Day Deals</p>
-            <h1>Refresh your space for less</h1>
-            <p>Discover home essentials, smart picks, and seasonal favorites delivered fast.</p>
-            <a class="primary-btn" href="#product">Shop now</a>
+        <section class="hero apple-hero">
+          <div class="hero-content apple-hero-content">
+            <p class="eyebrow apple-eyebrow">Apple</p>
+            <h1>New iPhone, MacBook, and Apple Watch</h1>
+            <p>Discover the latest Apple essentials in a sleek black collection designed for everyday style and performance.</p>
+            <a class="primary-btn apple-btn" href="#product">Shop Apple essentials</a>
           </div>
-          <div class="hero-visual">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Modern living room" />
+          <div class="hero-visual apple-visual">
+            <div class="apple-logo"></div>
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80" alt="iPhone 17 Pro Max showcase" />
           </div>
         </section>
 
-        <section class="status-bar">
-          <div class="status-pill"><span>🌍</span><strong id="activeRegion">United States</strong></div>
-          <div class="status-pill"><span>🗣️</span><strong id="activeLanguage">English</strong></div>
-          <div class="status-pill"><span>💖</span><strong id="wishlistCount">0 saved</strong></div>
+        <section class="back-school-poster" aria-label="Back to school essentials">
+          <div class="back-school-content">
+            <p class="back-school-eyebrow">Back to school</p>
+            <h2>Everything you need to start strong</h2>
+            <p>Find notebooks, pens, backpacks, laptops, phones, and study gear in one smart stop.</p>
+            <div class="back-school-items" aria-label="School essentials">
+              <span>💻 Laptops</span>
+              <span>📱 Phones</span>
+              <span>📓 Notebooks</span>
+              <span>✏️ Pens</span>
+              <span>🎒 Backpacks</span>
+              <span>🧠 Study kits</span>
+            </div>
+            <a class="primary-btn" href="#product">Shop school essentials</a>
+          </div>
         </section>
 
         <section class="products-section">
@@ -118,65 +152,215 @@
             </article>
           </div>
         </section>
+
+        <section class="category-showcase">
+          <div class="section-header">
+            <h2>KITCHEN under $50</h2>
+            <a href="#product">Shop kitchen deals</a>
+          </div>
+          <div class="category-grid kitchen-grid">
+            <article class="category-card kitchen-card">
+              <h3>Cooker</h3>
+              <p>Compact and easy to use.</p>
+            </article>
+            <article class="category-card kitchen-card">
+              <h3>Stove</h3>
+              <p>Efficient cooking essentials.</p>
+            </article>
+            <article class="category-card kitchen-card">
+              <h3>Cooking Gloves</h3>
+              <p>Safe and heat resistant.</p>
+            </article>
+            <article class="category-card kitchen-card">
+              <h3>Spices Box</h3>
+              <p>Organize every flavor.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="category-showcase">
+          <div class="section-header">
+            <h2>Top picks</h2>
+            <a href="#product">See more</a>
+          </div>
+          <div class="category-grid top-picks-grid">
+            <article class="category-card top-pick-card">
+              <h3>SSD</h3>
+              <p>Fast storage for work and play.</p>
+            </article>
+            <article class="category-card top-pick-card">
+              <h3>Laptops</h3>
+              <p>Portable power for study and work.</p>
+            </article>
+            <article class="category-card top-pick-card">
+              <h3>Clothes</h3>
+              <p>Everyday style at great prices.</p>
+            </article>
+            <article class="category-card top-pick-card">
+              <h3>Accessories</h3>
+              <p>Complete your setup with ease.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="category-showcase">
+          <div class="section-header">
+            <h2>Best books</h2>
+            <a href="#product">Shop books</a>
+          </div>
+          <div class="category-grid book-grid">
+            <article class="category-card book-card">
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80" alt="Rich Dad Poor Dad book cover" />
+              <h3>Rich Dad Poor Dad</h3>
+              <p>Robert Kiyosaki</p>
+            </article>
+            <article class="category-card book-card">
+              <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80" alt="Atomic Habits book cover" />
+              <h3>Atomic Habits</h3>
+              <p>James Clear</p>
+            </article>
+            <article class="category-card book-card">
+              <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80" alt="The Psychology of Money book cover" />
+              <h3>The Psychology of Money</h3>
+              <p>Morgan Housel</p>
+            </article>
+            <article class="category-card book-card">
+              <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=80" alt="Think and Grow Rich book cover" />
+              <h3>Think and Grow Rich</h3>
+              <p>Napoleon Hill</p>
+            </article>
+          </div>
+        </section>
       </section>
 
       <section id="product" class="page-section">
         <section class="detail-card">
           <div class="detail-grid">
-            <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=1000&q=80" alt="Smart LED lamp" />
+            <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1000&q=80" alt="Kitchen essentials" />
             <div>
               <p class="eyebrow">Amazon Choice</p>
-              <h1>Smart LED lamp with voice control</h1>
-              <p>Brighten your home with ambient lighting, app control, and a compact modern design.</p>
+              <h1>Kitchen essentials for everyday cooking</h1>
+              <p>Upgrade your cooking setup with smart, affordable tools for your home kitchen.</p>
               <div class="detail-price">$39.99</div>
               <div class="card-actions">
-                <button class="add-cart" data-name="Smart LED lamp" data-price="39.99">Add to Cart</button>
-                <button class="wishlist-btn" data-name="Smart LED lamp">♡</button>
+                <button class="add-cart" data-name="Kitchen essentials" data-price="39.99">Add to Cart</button>
+                <button class="wishlist-btn" data-name="Kitchen essentials">♡</button>
               </div>
-              <p><strong>Features:</strong> dimmable, color changing, energy efficient, 2-year warranty.</p>
+              <p><strong>Includes:</strong> cooker, stove accessories, gloves, and spice storage.</p>
             </div>
           </div>
         </section>
       </section>
 
-      <section id="login" class="page-section">
-        <section class="auth-card">
-          <h1>Sign in</h1>
-          <form class="auth-form">
-            <input type="email" placeholder="Email or mobile phone number" />
-            <input type="password" placeholder="Password" />
-            <button class="primary-btn" type="submit">Continue</button>
-          </form>
-          <p>New to Amazon? <a href="#checkout">Create your account</a></p>
-        </section>
-      </section>
-
-      <section id="checkout" class="page-section">
-        <section class="checkout-card">
-          <div class="checkout-grid">
-            <div>
-              <h1>Checkout</h1>
-              <form class="checkout-form">
-                <input type="text" placeholder="Full name" />
-                <input type="text" placeholder="Address" />
-                <input type="text" placeholder="City" />
-                <input type="text" placeholder="Postal code" />
-                <select><option>Payment Method</option><option>Credit Card</option><option>PayPal</option></select>
-                <textarea rows="4" placeholder="Delivery notes"></textarea>
-                <button class="primary-btn" type="submit">Place your order</button>
-              </form>
-            </div>
-            <div>
-              <h2>Order Summary</h2>
-              <div class="summary-list">
-                <div class="summary-item"><span>Smart LED lamp</span><span>$39.99</span></div>
-                <div class="summary-item"><span>Shipping</span><span>$5.99</span></div>
-                <div class="summary-item"><strong>Total</strong><strong>$45.98</strong></div>
-              </div>
-            </div>
+      <section class="page-section">
+        <section class="category-showcase">
+          <div class="section-header">
+            <h2>Most purchased items this season</h2>
+            <a href="#product">See more</a>
+          </div>
+          <div class="category-grid seasonal-grid">
+            <article class="category-card seasonal-card">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Smart watch" />
+              <h3>Watches</h3>
+              <p>Stylish picks for everyday wear.</p>
+            </article>
+            <article class="category-card seasonal-card">
+              <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80" alt="Fitness tracker" />
+              <h3>Fitbits</h3>
+              <p>Stay active with smart tracking.</p>
+            </article>
+            <article class="category-card seasonal-card">
+              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="Wall clock" />
+              <h3>Clocks</h3>
+              <p>Modern accents for every room.</p>
+            </article>
+            <article class="category-card seasonal-card">
+              <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Photo frame" />
+              <h3>Photo Frames</h3>
+              <p>Personalize your favorite memories.</p>
+            </article>
+            <article class="category-card seasonal-card">
+              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=600&q=80" alt="Coffee cups" />
+              <h3>Cups</h3>
+              <p>Comfort and style in every sip.</p>
+            </article>
           </div>
         </section>
       </section>
+
+      <section class="page-section">
+        <section class="category-showcase">
+          <div class="section-header">
+            <h2>Toys for all ages</h2>
+            <a href="#product">Shop toys</a>
+          </div>
+          <div class="category-grid toys-grid">
+            <article class="category-card toys-card">
+              <img src="https://images.unsplash.com/photo-1516627437551-228e8f9f8b2d?auto=format&fit=crop&w=600&q=80" alt="Toy building set" />
+              <h3>Building toys</h3>
+              <p>Creative play for young minds.</p>
+            </article>
+            <article class="category-card toys-card">
+              <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80" alt="Stuffed toy" />
+              <h3>Stuffed toys</h3>
+              <p>Soft comfort for every child.</p>
+            </article>
+            <article class="category-card toys-card">
+              <img src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?auto=format&fit=crop&w=600&q=80" alt="Educational toys" />
+              <h3>Educational toys</h3>
+              <p>Learn while you play.</p>
+            </article>
+            <article class="category-card toys-card">
+              <img src="https://images.unsplash.com/photo-1559070010-4d61eb0d8af8?auto=format&fit=crop&w=600&q=80" alt="Remote controlled toy" />
+              <h3>Remote toys</h3>
+              <p>Fun for bigger kids and adults.</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-section">
+        <section class="category-showcase">
+          <div class="section-header">
+            <h2>Sports essentials</h2>
+            <a href="#product">Shop sports</a>
+          </div>
+          <div class="category-grid sports-grid">
+            <article class="category-card sports-card">
+              <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=600&q=80" alt="Badminton racket and shuttle" />
+              <h3>Badminton</h3>
+              <p>Rackets, shuttlecocks, and nets.</p>
+            </article>
+            <article class="category-card sports-card">
+              <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80" alt="Football and gear" />
+              <h3>Football</h3>
+              <p>Footballs, cones, and training gear.</p>
+            </article>
+            <article class="category-card sports-card">
+              <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80" alt="Cricket bat and ball" />
+              <h3>Cricket</h3>
+              <p>Bats, balls, pads, and helmets.</p>
+            </article>
+            <article class="category-card sports-card">
+              <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=600&q=80" alt="Basketball and hoop" />
+              <h3>Basketball</h3>
+              <p>Basketballs, shoes, and hoops.</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-section">
+        <section class="signin-banner">
+          <div class="signin-icon">🔐</div>
+          <div>
+            <h3>Sign in for personalized recommendations</h3>
+            <p>Get tailored picks, order updates, and faster checkout.</p>
+          </div>
+          <a class="primary-btn" href="#home">Sign in</a>
+        </section>
+      </section>
+
     </main>
 
     <aside class="drawer" id="cartDrawer">
@@ -222,6 +406,35 @@
       </label>
       <button class="primary-btn full" id="saveSettings">Save</button>
     </div>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h4>Get to Know Us</h4>
+          <a href="#home">Careers</a>
+          <a href="#home">Blog</a>
+          <a href="#home">About Amazon</a>
+          <a href="#home">Investor Relations</a>
+        </div>
+        <div>
+          <h4>Make Money with Us</h4>
+          <a href="#home">Sell products</a>
+          <a href="#home">Advertise</a>
+          <a href="#home">Affiliate Program</a>
+          <a href="#home">Self-Publish</a>
+        </div>
+        <div>
+          <h4>Let Us Help You</h4>
+          <a href="#login">Your Account</a>
+          <a href="#checkout">Orders</a>
+          <a href="#home">Returns</a>
+          <a href="#home">Help</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 1996-2026, Amazon.com, Inc. or its affiliates</p>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
