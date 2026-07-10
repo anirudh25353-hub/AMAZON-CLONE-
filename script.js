@@ -60,6 +60,7 @@ function getElements() {
     settingsCountry: document.getElementById('settingsCountry'),
     settingsLanguage: document.getElementById('settingsLanguage'),
     darkModeToggle: document.getElementById('darkModeToggle'),
+    locationButton: document.getElementById('locationButton'),
   };
 }
 
@@ -104,13 +105,25 @@ function renderWishlist() {
   if (wishlistCount) wishlistCount.textContent = `${state.wishlist.length} saved`;
 }
 
+function openSettingsPanel() {
+  const { settingsCountry, settingsLanguage, darkModeToggle, settingsPanel, overlay } = getElements();
+  if (settingsCountry) settingsCountry.value = state.country;
+  if (settingsLanguage) settingsLanguage.value = state.language;
+  if (darkModeToggle) darkModeToggle.checked = state.darkMode;
+  settingsPanel?.classList.add('open');
+  overlay?.classList.add('show');
+}
+
 function updatePreferences() {
-  const { countryLabel, activeRegion, activeLanguage, countryButton, languageButton } = getElements();
+  const { countryLabel, activeRegion, activeLanguage, countryButton, languageButton, settingsCountry, settingsLanguage, darkModeToggle } = getElements();
   if (countryLabel) countryLabel.textContent = state.country;
   if (activeRegion) activeRegion.textContent = state.country;
   if (activeLanguage) activeLanguage.textContent = state.language;
   if (countryButton) countryButton.textContent = state.country === 'United States' ? '🇺🇸 US' : '🌍 ' + state.country;
   if (languageButton) languageButton.textContent = state.language === 'English' ? 'EN' : state.language.slice(0, 2).toUpperCase();
+  if (settingsCountry) settingsCountry.value = state.country;
+  if (settingsLanguage) settingsLanguage.value = state.language;
+  if (darkModeToggle) darkModeToggle.checked = state.darkMode;
   document.body.classList.toggle('dark', state.darkMode);
 }
 
@@ -142,19 +155,14 @@ function toggleWishlist(name, button) {
 }
 
 function bindEvents() {
-  const { cartToggle, closeCart, overlay, settingsToggle, closeSettings, saveSettings, settingsCountry, settingsLanguage, darkModeToggle } = getElements();
+  const { cartToggle, closeCart, overlay, settingsToggle, closeSettings, saveSettings, settingsCountry, settingsLanguage, darkModeToggle, locationButton, countryButton, languageButton } = getElements();
 
   cartToggle?.addEventListener('click', openCart);
   closeCart?.addEventListener('click', closeDrawer);
   overlay?.addEventListener('click', closeDrawer);
-  settingsToggle?.addEventListener('click', () => {
-    if (settingsCountry) settingsCountry.value = state.country;
-    if (settingsLanguage) settingsLanguage.value = state.language;
-    if (darkModeToggle) darkModeToggle.checked = state.darkMode;
-    const { settingsPanel, overlay } = getElements();
-    settingsPanel?.classList.add('open');
-    overlay?.classList.add('show');
-  });
+  settingsToggle?.addEventListener('click', openSettingsPanel);
+  countryButton?.addEventListener('click', openSettingsPanel);
+  languageButton?.addEventListener('click', openSettingsPanel);
   closeSettings?.addEventListener('click', closeDrawer);
   saveSettings?.addEventListener('click', () => {
     if (settingsCountry) state.country = settingsCountry.value;
@@ -165,12 +173,19 @@ function bindEvents() {
     closeDrawer();
   });
 
+  locationButton?.addEventListener('click', openSettingsPanel);
+
   document.querySelectorAll('.add-cart').forEach((button) => {
     button.addEventListener('click', () => addToCart(button.dataset.name, parseFloat(button.dataset.price)));
   });
 
   document.querySelectorAll('.wishlist-btn').forEach((button) => {
-    button.addEventListener('click', () => toggleWishlist(button.dataset.name, button));
+    const itemName = button.dataset.name;
+    if (state.wishlist.includes(itemName)) {
+      button.classList.add('active');
+      button.textContent = '❤';
+    }
+    button.addEventListener('click', () => toggleWishlist(itemName, button));
   });
 }
 
