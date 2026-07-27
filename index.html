@@ -1,8 +1,10 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Amazon Clone - Shop electronics, home, fashion, and more." />
+    <meta name="theme-color" content="#FF9900" />
     <title>Amazon Clone</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,26 +15,27 @@
     <header class="topbar">
       <div class="top-row">
         <div class="brand-group">
-          <a href="#home" class="logo-badge" aria-label="Amazon home">
+          <a href="/" class="logo-badge" aria-label="Amazon home">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon logo" />
           </a>
           <button class="location-pill" id="locationButton">
             <span class="location-icon">📍</span>
             <span class="location-copy">
               <span>Deliver to</span>
-              <strong id="country!Label">United States</strong>
+              <strong id="countryLabel">United States</strong>
             </span>
           </button>
         </div>
 
         <div class="search-wrap" role="search">
+          <label for="searchCategory">Search in:</label>
           <select id="searchCategory" aria-label="Search category">
             <option>All</option>
             <option>Electronics</option>
             <option>Home</option>
             <option>Fashion</option>
           </select>
-          <input type="text" placeholder="Search Amazon" aria-label="Search Amazon" />
+          <input type="text" id="searchInput" placeholder="Search Amazon" aria-label="Search Amazon" />
           <button class="search-btn" aria-label="Search">🔍</button>
         </div>
 
@@ -42,11 +45,11 @@
             <span class="lang-label">EN</span>
             <span class="arrow-down" aria-hidden="true">▾</span>
           </button>
-          <a href="#login" class="nav-link">Hello, sign in</a>
-          <a href="#checkout" class="nav-link">Returns & Orders</a>
+          <a href="/login" class="nav-link">Hello, sign in</a>
+          <a href="/orders" class="nav-link">Returns & Orders</a>
           <button class="cart-btn" id="cartToggle" aria-label="Shopping cart">
-            <span class="cart-icon">🛒</span>
-            <span id="cartCount">0</span>
+            <span class="cart-icon" aria-hidden="true">🛒</span>
+            <span id="cartCount" aria-live="polite">0</span>
           </button>
         </div>
       </div>
@@ -56,17 +59,17 @@
           <span class="menu-icon">☰</span>
           <span>All</span>
         </button>
-        <a href="#home">Today's Deals</a>
-        <a href="#product">Prime Video</a>
-        <a href="#login">Gift Cards</a>
-        <a href="#checkout">Sell</a>
-        <a href="#home" class="secondary-nav-link icon-link"><span class="nav-icon">🎁</span><span>Registry</span></a>
-        <a href="#home" class="secondary-nav-link icon-link"><span class="nav-icon">💬</span><span>Customer Service</span></a>
+        <a href="/">Today's Deals</a>
+        <a href="/">Prime Video</a>
+        <a href="/">Gift Cards</a>
+        <a href="/">Sell</a>
+        <a href="/" class="secondary-nav-link icon-link"><span class="nav-icon" aria-hidden="true">🎁</span><span>Registry</span></a>
+        <a href="/" class="secondary-nav-link icon-link"><span class="nav-icon" aria-hidden="true">💬</span><span>Customer Service</span></a>
       </nav>
     </header>
 
     <div class="top-notice">
-      <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="#home">Click here to go to amazon.in</a></p>
+      <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="https://www.amazon.in">Click here to go to amazon.in</a></p>
     </div>
 
     <main>
@@ -79,7 +82,7 @@
             <a class="primary-btn apple-btn" href="#product">Shop Apple essentials</a>
           </div>
           <div class="hero-visual apple-visual">
-            <div class="apple-logo"></div>
+            <div class="apple-logo"></div>
             <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80" alt="iPhone 17 Pro Max showcase" />
           </div>
         </section>
@@ -113,7 +116,7 @@
               <p>$39.99</p>
               <div class="card-actions">
                 <button class="add-cart" data-name="Smart LED lamp" data-price="39.99">Add to Cart</button>
-                <button class="wishlist-btn" data-name="Smart LED lamp">♡</button>
+                <button class="wishlist-btn" data-name="Smart LED lamp" aria-label="Add Smart LED lamp to wishlist">♡</button>
               </div>
               <a class="secondary-link" href="#product">View details</a>
             </article>
@@ -124,7 +127,7 @@
               <p>$89.00</p>
               <div class="card-actions">
                 <button class="add-cart" data-name="Wireless headphones" data-price="89.00">Add to Cart</button>
-                <button class="wishlist-btn" data-name="Wireless headphones">♡</button>
+                <button class="wishlist-btn" data-name="Wireless headphones" aria-label="Add Wireless headphones to wishlist">♡</button>
               </div>
               <a class="secondary-link" href="#product">View details</a>
             </article>
@@ -135,7 +138,7 @@
               <p>$129.99</p>
               <div class="card-actions">
                 <button class="add-cart" data-name="Fitness watch" data-price="129.99">Add to Cart</button>
-                <button class="wishlist-btn" data-name="Fitness watch">♡</button>
+                <button class="wishlist-btn" data-name="Fitness watch" aria-label="Add Fitness watch to wishlist">♡</button>
               </div>
               <a class="secondary-link" href="#product">View details</a>
             </article>
@@ -146,7 +149,7 @@
               <p>$149.00</p>
               <div class="card-actions">
                 <button class="add-cart" data-name="Espresso machine" data-price="149.00">Add to Cart</button>
-                <button class="wishlist-btn" data-name="Espresso machine">♡</button>
+                <button class="wishlist-btn" data-name="Espresso machine" aria-label="Add Espresso machine to wishlist">♡</button>
               </div>
               <a class="secondary-link" href="#product">View details</a>
             </article>
@@ -239,12 +242,12 @@
             <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1000&q=80" alt="Kitchen essentials" />
             <div>
               <p class="eyebrow">Amazon Choice</p>
-              <h1>Kitchen essentials for everyday cooking</h1>
+              <h2>Kitchen essentials for everyday cooking</h2>
               <p>Upgrade your cooking setup with smart, affordable tools for your home kitchen.</p>
               <div class="detail-price">$39.99</div>
               <div class="card-actions">
                 <button class="add-cart" data-name="Kitchen essentials" data-price="39.99">Add to Cart</button>
-                <button class="wishlist-btn" data-name="Kitchen essentials">♡</button>
+                <button class="wishlist-btn" data-name="Kitchen essentials" aria-label="Add Kitchen essentials to wishlist">♡</button>
               </div>
               <p><strong>Includes:</strong> cooker, stove accessories, gloves, and spice storage.</p>
             </div>
@@ -352,12 +355,12 @@
 
       <section class="page-section">
         <section class="signin-banner">
-          <div class="signin-icon">🔐</div>
+          <div class="signin-icon" aria-hidden="true">🔐</div>
           <div>
             <h3>Sign in for personalized recommendations</h3>
             <p>Get tailored picks, order updates, and faster checkout.</p>
           </div>
-          <a class="primary-btn" href="#home">Sign in</a>
+          <a class="primary-btn" href="/login">Sign in</a>
         </section>
       </section>
 
@@ -366,12 +369,12 @@
     <aside class="drawer" id="cartDrawer">
       <div class="drawer-header">
         <h3>Your Cart</h3>
-        <button id="closeCart">✕</button>
+        <button id="closeCart" aria-label="Close cart">✕</button>
       </div>
       <div id="cartItems" class="cart-items"></div>
       <div class="drawer-footer">
         <p id="cartTotal">Subtotal: $0.00</p>
-        <a class="primary-btn full" href="#checkout">Proceed to Checkout</a>
+        <a class="primary-btn full" href="/checkout">Proceed to Checkout</a>
       </div>
     </aside>
 
@@ -380,55 +383,55 @@
     <div class="settings-panel" id="settingsPanel">
       <div class="settings-header">
         <h3>Preferences</h3>
-        <button id="closeSettings">✕</button>
+        <button id="closeSettings" aria-label="Close preferences">✕</button>
       </div>
-      <label>
+      <label for="settingsCountry">
         Country
-        <select id="settingsCountry">
-          <option value="United States">United States</option>
-          <option value="Canada">Canada</option>
-          <option value="United Kingdom">United Kingdom</option>
-          <option value="India">India</option>
-        </select>
       </label>
-      <label>
+      <select id="settingsCountry">
+        <option value="United States">United States</option>
+        <option value="Canada">Canada</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="India">India</option>
+      </select>
+      <label for="settingsLanguage">
         Language
-        <select id="settingsLanguage">
-          <option value="English">English</option>
-          <option value="Español">Español</option>
-          <option value="Français">Français</option>
-          <option value="Deutsch">Deutsch</option>
-        </select>
       </label>
+      <select id="settingsLanguage">
+        <option value="English">English</option>
+        <option value="Español">Español</option>
+        <option value="Français">Français</option>
+        <option value="Deutsch">Deutsch</option>
+      </select>
       <label class="toggle-row">
         <span>Dark mode</span>
-        <input type="checkbox" id="darkModeToggle" />
+        <input type="checkbox" id="darkModeToggle" aria-label="Toggle dark mode" />
       </label>
       <button class="primary-btn full" id="saveSettings">Save</button>
     </div>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="footer-grid">
         <div>
           <h4>Get to Know Us</h4>
-          <a href="#home">Careers</a>
-          <a href="#home">Blog</a>
-          <a href="#home">About Amazon</a>
-          <a href="#home">Investor Relations</a>
+          <a href="/">Careers</a>
+          <a href="/">Blog</a>
+          <a href="/">About Amazon</a>
+          <a href="/">Investor Relations</a>
         </div>
         <div>
           <h4>Make Money with Us</h4>
-          <a href="#home">Sell products</a>
-          <a href="#home">Advertise</a>
-          <a href="#home">Affiliate Program</a>
-          <a href="#home">Self-Publish</a>
+          <a href="/">Sell products</a>
+          <a href="/">Advertise</a>
+          <a href="/">Affiliate Program</a>
+          <a href="/">Self-Publish</a>
         </div>
         <div>
           <h4>Let Us Help You</h4>
-          <a href="#login">Your Account</a>
-          <a href="#checkout">Orders</a>
-          <a href="#home">Returns</a>
-          <a href="#home">Help</a>
+          <a href="/login">Your Account</a>
+          <a href="/orders">Orders</a>
+          <a href="/">Returns</a>
+          <a href="/">Help</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -436,6 +439,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
