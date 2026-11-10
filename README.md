@@ -20,8 +20,6 @@ I have created it with **Script** in frontend,  **HTML AND CSS** for backend
 - Check order history.
 
 
-## Screenshots
-
 <img src="./screenshots/ss1.png" alt=""/>
 <br>
 <img src="./screenshots/ss2.png" alt=""/>
