@@ -22,10 +22,6 @@ I have created it with **Script** in frontend,  **HTML AND CSS** for backend
 
 ## Screenshots
 
-Login Credentials:
-1. Email: admin2023@gmail.com
-2. Pass: 1234
-
 <img src="./screenshots/ss1.png" alt=""/>
 <br>
 <img src="./screenshots/ss2.png" alt=""/>
